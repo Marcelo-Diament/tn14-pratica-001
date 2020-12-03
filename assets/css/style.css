@@ -17,3 +17,28 @@ ul,
 ol {
   list-style: none;
 }
+
+.ano {
+  color: #888;
+  display: block;
+  font-style: italic;
+}
+
+[class*="-item"] {
+  background-color: rgba(154, 174, 255, 0.2);
+  border-radius: 32px;
+  margin-bottom: 16px;
+  padding: 24px;
+}
+
+[class*="-item"]:last-child {
+  background-color: rgba(255, 215, 151, 0.2);
+}
+
+[class*="-item"]:nth-child(even) {
+  background-color: rgba(162, 253, 182, 0.2);
+}
+
+[class*="-item"]:first-of-type {
+  background-color: rgba(255, 149, 215, 0.2);
+}
