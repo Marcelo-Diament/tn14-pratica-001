@@ -1,10 +1,49 @@
 /* RESET */
+:root {
+  --primaria: #152ea0;
+  --bg1: rgba(154, 174, 255, 0.2);
+  --bg2: rgba(255, 215, 151, 0.2);
+  --bg3: rgba(162, 253, 182, 0.2);
+  --bg4: rgba(255, 149, 215, 0.2);
+  --padding: 20px;
+}
+
 * {
   box-sizing: border-box;
-  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+}
+
+
+header,
+footer {
+  background-color: var(--bg1);
+}
+
+header,
+aside,
+main,
+section,
+article,
+div,
+footer {
+  padding: var(--padding)
+}
+
+header {
+  border-bottom: 2px solid var(--primaria);
+}
+
+footer {
+  border-top: 2px solid var(--primaria);
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 a {
@@ -13,32 +52,107 @@ a {
   text-decoration: none;
 }
 
-ul,
-ol {
-  list-style: none;
+h1 {
+  color: var(--primaria);
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 24px auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2,
+h3 {
+  color: var(--primaria);
+  margin: 24px auto 16px;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  color: #222;
+  line-height: 24px;
+  margin: 8px auto;
+}
+
+header img {
+  animation: bordaCamaleao 4s infinite;
+  border: 2px solid var(--primaria);
+  border-radius: 50%;
+  filter: drop-shadow(2px 2px 4px var(--bg1));
+  height: 96px;
+  transition: transform .8s cubic-bezier(.42, 0, 1, 1);
+  width: 96px;
+}
+
+header img:hover {
+  transform: rotateY(360deg);
+}
+
+#habilidades article {
+  background-color: var(--bg1);
+  border-radius: 16px 0;
+  display: inline-block;
+  min-width: calc(50% - 16px);
+  vertical-align: top;
+  min-height: 172px;
 }
 
 .ano {
-  color: #888;
+  color: var(--primaria);
   display: block;
   font-style: italic;
 }
 
+a[href*="tel"]::before {
+  content: '\0260E';
+  margin-right: 4px;
+}
+
 [class*="-item"] {
-  background-color: rgba(154, 174, 255, 0.2);
+  background-color: var(--bg1);
   border-radius: 32px;
   margin-bottom: 16px;
-  padding: 24px;
+  padding: var(--padding);
 }
 
 [class*="-item"]:last-child {
-  background-color: rgba(255, 215, 151, 0.2);
+  background-color: var(--bg2);
 }
 
 [class*="-item"]:nth-child(even) {
-  background-color: rgba(162, 253, 182, 0.2);
+  background-color: var(--bg3);
 }
 
 [class*="-item"]:first-of-type {
-  background-color: rgba(255, 149, 215, 0.2);
+  background-color: var(--bg4);
+}
+
+@keyframes bordaCamaleao {
+  0% {
+    border: 2px solid blue;
+  }
+
+  25% {
+    border: 2px solid red;
+  }
+
+  50% {
+    border: 2px solid yellow;
+  }
+
+  75% {
+    border: 2px solid green;
+  }
+
+  100% {
+    border: 2px solid blue;
+  }
 }
